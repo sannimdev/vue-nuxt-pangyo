@@ -1,10 +1,11 @@
 <template>
     <div>
-        <h1>여긴 Root URL</h1>
-        <Tutorial />
+        <h1>메인 페이지</h1>
     </div>
 </template>
 
 <script>
 export default {};
 </script>
+
+<style scoped></style>
