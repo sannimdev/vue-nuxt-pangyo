@@ -24,3 +24,8 @@
 ### Nuxt의 라우팅 관련 컴포넌트 구조
 
 ![처음 접하는 nuxt 프로젝트 구조에 md 관련 이미지를 같이 관리하면 헷갈릴 것 같아서 이미지는 외부의 플랫폼을 이용](https://i.imgur.com/yGTkvfx.png)
+
+## 2. backend 마련하기
+
+-   현재 수업은 프런트엔드 수업이므로 backend 구동을 위한 소스코드를 가져와야 한다.
+-   [캡틴판교의 learn-nuxt 리포지터리](https://github.com/joshua1988/learn-nuxt)를 클론하여 backend파일만 복사하고 해당 프로젝트에 삽입한다.
