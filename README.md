@@ -20,3 +20,7 @@
 -   jsconfig.json
 -   nuxt.config.js
 -   package.json
+
+### Nuxt의 라우팅 관련 컴포넌트 구조
+
+![처음 접하는 nuxt 프로젝트 구조에 md 관련 이미지를 같이 관리하면 헷갈릴 것 같아서 이미지는 외부의 플랫폼을 이용](https://i.imgur.com/yGTkvfx.png)
