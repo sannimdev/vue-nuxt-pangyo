@@ -29,3 +29,9 @@
 
 -   현재 수업은 프런트엔드 수업이므로 backend 구동을 위한 소스코드를 가져와야 한다.
 -   [캡틴판교의 learn-nuxt 리포지터리](https://github.com/joshua1988/learn-nuxt)를 클론하여 backend파일만 복사하고 해당 프로젝트에 삽입한다.
+
+## 3. Nuxt의 데이터 호출 방식 안내
+
+### Nuxt만의 철학
+
+-

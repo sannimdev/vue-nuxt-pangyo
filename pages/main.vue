@@ -12,15 +12,19 @@
 import axios from 'axios';
 
 export default {
+    // eslint (vue/order-in-components) 순서에 따라서 맨 위에 작성해야 한다.
+    async asyncData() {
+        const response = await axios.get('http://localhost:3000/products');
+        const products = response.data;
+
+        return {
+            products,
+        };
+    },
     data() {
         return {
             products: [],
         };
-    },
-
-    async created() {
-        const response = await axios.get('http://localhost:3000/products');
-        this.products = response.data;
     },
 };
 </script>
