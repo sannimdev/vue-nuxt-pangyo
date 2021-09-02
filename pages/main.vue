@@ -12,8 +12,8 @@
 import axios from 'axios';
 
 export default {
-    // eslint (vue/order-in-components) 순서에 따라서 맨 위에 작성해야 한다.
     async asyncData() {
+        // asyncData 메서드는 pages 이하 컴포넌트에서만 적용할 수 있는 것에 주의한다.
         const response = await axios.get('http://localhost:3000/products');
         const products = response.data;
 
