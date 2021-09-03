@@ -1,10 +1,85 @@
 <template>
-    <div>
-        <h1>메인 페이지</h1>
-        <p>Nuxt 시작하기</p>
+    <div class="app">
+        <main>
+            <div>
+                <input type="text" />
+            </div>
+            <ul>
+                <li
+                    class="item flex"
+                    v-for="product in products"
+                    :key="product.id"
+                    @click="moveToDetailPage(product.id)"
+                >
+                    <img class="product-image" :src="product.imageUrl" :alt="product.name" />
+                    <p>{{ product.name }}</p>
+                    <span>{{ product.price }}</span>
+                </li>
+            </ul>
+        </main>
     </div>
 </template>
 
 <script>
-export default {};
+import axios from 'axios';
+
+export default {
+    async asyncData() {
+        // VueRoute에서 beforeEnter 사이클(즉, 라우터에 진입하기 전 시점)에서 동작하는 것과 같다고 할 수 있다.
+        // asyncData 메서드는 pages 이하 컴포넌트에서만 적용할 수 있는 것에 주의한다.
+        const response = await axios.get('http://localhost:3000/products');
+        const products = response.data.map((item) => ({
+            ...item,
+            imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+        }));
+
+        return {
+            products,
+        };
+    },
+    data() {
+        return {
+            products: [],
+        };
+    },
+    methods: {
+        moveToDetailPage(id) {
+            this.$router.push(`detail/${id}`);
+        },
+    },
+};
 </script>
+
+<style scoped>
+.flex {
+    display: flex;
+    justify-content: center;
+}
+.item {
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.product-image {
+    width: 400px;
+    height: 250px;
+}
+.app {
+    position: relative;
+}
+.cart-wrapper {
+    position: sticky;
+    float: right;
+    bottom: 50px;
+    right: 50px;
+}
+.cart-wrapper .btn {
+    display: inline-block;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+</style>
