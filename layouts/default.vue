@@ -8,11 +8,7 @@
 </template>
 
 <script>
-export default {
-    created() {
-        console.log(this.$route);
-    },
-};
+export default {};
 </script>
 
 <style></style>
