@@ -1,9 +1,7 @@
 <template>
     <div class="app">
         <main>
-            <div>
-                <input type="text" />
-            </div>
+            <SearchInput />
             <ul>
                 <li
                     class="item flex"
@@ -22,8 +20,10 @@
 
 <script>
 import axios from 'axios';
+import SearchInput from '@/components/SearchInput.vue';
 
 export default {
+    components: { SearchInput },
     async asyncData() {
         // VueRoute에서 beforeEnter 사이클(즉, 라우터에 진입하기 전 시점)에서 동작하는 것과 같다고 할 수 있다.
         // asyncData 메서드는 pages 이하 컴포넌트에서만 적용할 수 있는 것에 주의한다.
