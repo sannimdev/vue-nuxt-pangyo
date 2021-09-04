@@ -1,12 +1,12 @@
 <template>
     <div class="app">
         <main>
-            <SearchInput />
+            <SearchInput v-model="searchKeyword" />
             <ul>
                 <li
-                    class="item flex"
                     v-for="product in products"
                     :key="product.id"
+                    class="item flex"
                     @click="moveToDetailPage(product.id)"
                 >
                     <img class="product-image" :src="product.imageUrl" :alt="product.name" />
@@ -40,6 +40,7 @@ export default {
     data() {
         return {
             products: [],
+            searchKeyword: '',
         };
     },
     methods: {
