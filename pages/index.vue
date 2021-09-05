@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <main>
-            <SearchInput v-model="searchKeyword" />
+            <SearchInput v-model="searchKeyword" @search="searchProducts" />
             <ul>
                 <li
                     v-for="product in products"
@@ -21,6 +21,7 @@
 <script>
 import axios from 'axios';
 import SearchInput from '@/components/SearchInput.vue';
+import { fetchProductByKeyword } from '~/api';
 
 export default {
     components: { SearchInput },
@@ -46,6 +47,10 @@ export default {
     methods: {
         moveToDetailPage(id) {
             this.$router.push(`detail/${id}`);
+        },
+        async searchProducts() {
+            const response = await fetchProductByKeyword(this.searchKeyword);
+            console.log(response);
         },
     },
 };
