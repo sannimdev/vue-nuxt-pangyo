@@ -7,9 +7,7 @@
             <div class="side-panel">
                 <p class="name">{{ product.name }}</p>
                 <p class="price">{{ product.price }}</p>
-                <nuxt-link to="/cart">
-                    <button type="button" @click="addToCart">Add to Cart</button>
-                </nuxt-link>
+                <button type="button" @click="addToCart">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -26,6 +24,11 @@ export default {
         return { product };
     },
     created() {},
+    methods: {
+        addToCart() {
+            this.$router.push('/cart');
+        },
+    },
 };
 </script>
 
