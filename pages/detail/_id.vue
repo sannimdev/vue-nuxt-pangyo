@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { fetchProductById } from '@/api';
+import { createCartItem, fetchProductById } from '@/api';
 export default {
     // context는 넉스트 프레임워크 전반에 걸쳐 공용으로 사용되는 속성으로써 플러그인, 미들웨어 드으이 속성에도 접근할 수 있음.
     async asyncData({ params }) {
@@ -25,7 +25,9 @@ export default {
     },
     created() {},
     methods: {
-        addToCart() {
+        async addToCart() {
+            const response = await createCartItem(this.product);
+            console.log(response);
             this.$store.commit('addCartItem', this.product);
             this.$router.push('/cart');
         },
