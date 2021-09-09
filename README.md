@@ -39,6 +39,7 @@
 ### asyncData
 
 -   FE에 전달해주기 이전에 먼저 호출하여 데이터를 구성할 수 있음.
+-   page component에서만 사용할 수 있다.
 
 ### nuxtInit
 
