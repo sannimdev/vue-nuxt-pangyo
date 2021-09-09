@@ -22,16 +22,15 @@
 </template>
 
 <script>
-import axios from 'axios';
 import SearchInput from '@/components/SearchInput.vue';
-import { fetchProductByKeyword } from '~/api';
+import { fetchProductByKeyword, fetchProducts } from '~/api';
 
 export default {
     components: { SearchInput },
     async asyncData() {
         // VueRoute에서 beforeEnter 사이클(즉, 라우터에 진입하기 전 시점)에서 동작하는 것과 같다고 할 수 있다.
         // asyncData 메서드는 pages 이하 컴포넌트에서만 적용할 수 있는 것에 주의한다.
-        const response = await axios.get('http://localhost:3000/products');
+        const response = await fetchProducts();
         const products = response.data.map((item) => ({
             ...item,
             imageUrl: `${item.imageUrl}?random=${Math.random()}`,
