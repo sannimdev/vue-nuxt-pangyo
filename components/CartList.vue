@@ -13,14 +13,17 @@
 </template>
 
 <script>
-// import { FETCH_CART_ITEMS } from '@/store';
+import { FETCH_CART_ITEMS } from '@/store';
+
 export default {
     // 일반 컴포넌트에서는 asyncData를 못 쓰는데...! 🙄
     // asyncData({ store }) {
     //     store.dispatch(FETCH_CART_ITEMS);
     // },
 
-    fetch() {},
+    async fetch() {
+        await this.$store.dispatch(FETCH_CART_ITEMS);
+    },
 };
 </script>
 
