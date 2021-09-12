@@ -23,6 +23,8 @@ export default {
 
     async fetch() {
         await this.$store.dispatch(FETCH_CART_ITEMS);
+        // 바로 URL에 진입했을 때 vs 다른 URL에서 진입했을 때 차이가 있다는 점 주의하기
+        console.log(this);
     },
 };
 </script>
