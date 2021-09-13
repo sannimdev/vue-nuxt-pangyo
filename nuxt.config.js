@@ -42,7 +42,7 @@ export default {
     env: {
         baseURL:
             process.env.NODE_ENV === 'production'
-                ? 'https://my-json-server.typicode.com/sannimdev/vue-nuxt-pangyo-api'
+                ? 'https://my-json-server.typicode.com/sannimdev/vue-nuxt-pangyo'
                 : 'http://localhost:3000',
     },
 };
