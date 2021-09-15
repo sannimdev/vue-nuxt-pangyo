@@ -23,15 +23,17 @@ export default {
         const product = response.data;
         return { product };
     },
-    head: {
-        title: 'Shopping Item',
-        meta: [
-            {
-                hid: 'description',
-                name: 'description',
-                content: '이 상품은 ~~입니다.',
-            },
-        ],
+    head() {
+        return {
+            title: `Shopping Item - ${this.product.name}`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: '이 상품은 ~~입니다.',
+                },
+            ],
+        };
     },
     created() {},
     methods: {
