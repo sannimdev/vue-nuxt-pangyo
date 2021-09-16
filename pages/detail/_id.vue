@@ -32,6 +32,22 @@ export default {
                     name: 'description',
                     content: '이 상품은 ~~입니다.',
                 },
+                // OG
+                {
+                    hid: 'og:title',
+                    property: 'og:titl',
+                    content: '상품 상세 페이지',
+                },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: '상품의 상세 정보',
+                },
+                {
+                    hid: 'og:image',
+                    property: 'og:image',
+                    content: 'http://placeimg.com/640/480/fashion',
+                },
             ],
         };
     },
